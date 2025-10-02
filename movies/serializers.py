@@ -11,10 +11,10 @@ class MovieModelSerializer(serializers.ModelSerializer):
         model = Movie
         fields = '__all__'
 
-    def validate_release_date(self, value):  # Cria uma função de validação. Precisa começar com 'validade_' e ter o nome do campo a ser validado.
-        if value.year < 1920:   # Representa a regra a ser cumprida
-            raise serializers.ValidationError('Filmes anteiores à 1920 não permitidos')  # Sobe um erro de validação com uma mensagem caso a validação falhe
-        return value    # Se for validado, retorna o valor
+    def validate_release_date(self, value):
+        if value.year < 1920:
+            raise serializers.ValidationError('Filmes anteiores à 1920 não permitidos')
+        return value
 
     def validate_resume(self, value):
         if len(value) > 500:

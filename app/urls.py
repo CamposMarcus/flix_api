@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path, include  # include busca dentro de um app pelo arquivo urls e captura todas as urls declaradas
+from django.urls import path, include
 
 
 urlpatterns = [
