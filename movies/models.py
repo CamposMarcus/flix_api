@@ -5,10 +5,10 @@ from genres.models import Genre
 
 class Movie(models.Model):
     title = models.CharField(max_length=500)
-    genre = models.ForeignKey(Genre, on_delete=models.PROTECT, related_name='movies')  # Cria uma chave estrangeira que busca opções do app criado em genres
+    genre = models.ForeignKey(Genre, on_delete=models.PROTECT, related_name='movies')
     release_date = models.DateField(null=True, blank=True)
-    actors = models.ManyToManyField(Actor, related_name='movie')  # Cria uma ligação muitos para muitos pois um filme possui vários atores e um ator pode estar em vários filmes
-    resume = models.TextField(null=True, blank=True)  # Cria um campo de texto livre
+    actors = models.ManyToManyField(Actor, related_name='movie')
+    resume = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return self.title

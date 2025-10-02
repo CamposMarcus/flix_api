@@ -11,7 +11,7 @@ class Actor(models.Model):
     birthday = models.DateField(null=True, blank=True)
     nationality = models.CharField(
         max_length=100,
-        choices=NATIONALITY_CHOICES,  # Dentro do CharField é possível utilizar o campo choises para limitar as escolhas do usuário
+        choices=NATIONALITY_CHOICES,
         null=True,
         blank=True
     )

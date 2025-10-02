@@ -1,7 +1,7 @@
 from django.contrib import admin
-from genres.models import Genre  # Importa a classe Genre para o arquivo admin.py
+from genres.models import Genre
 
 
-@admin.register(Genre)  # Registra a classe model Genre na tela de Admin
+@admin.register(Genre)
 class GenreAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name')  # list_display representa as colunas a serem apresentadas na tabela
+    list_display = ('id', 'name')
