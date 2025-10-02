@@ -1,0 +1,4 @@
+venv
+Instruções_do_projeto.txt
+*.sqlite3
+__pycache__/
