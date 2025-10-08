@@ -32,9 +32,13 @@ class MovieListDetailSerializer(serializers.ModelSerializer):
         fields = ['id', 'title', 'genre', 'actors', 'release_date', 'rate', 'resume']
 
     def get_rate(self, obj):
-        rate = round(obj.reviews.aggregate(Avg('stars'))['stars__avg'], 1)
-
-        if rate:
-            return rate
-
+        avg = obj.reviews.aggregate(Avg('stars'))['stars__avg']
+        if avg is not None:
+            return round(avg, 1)
         return None
+        # rate = round(obj.reviews.aggregate(Avg('stars'))['stars__avg'], 1)
+
+        # if rate:
+        #     return rate
+
+        # return None
